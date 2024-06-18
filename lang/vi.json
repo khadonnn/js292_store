@@ -1,0 +1,21 @@
+{
+    "MENU": {
+        "HOME": "TRANG CHỦ",
+        "ABOUT": "GIỚI THIỆU",
+        "CONTACT":"LIÊN HỆ",
+        "ADDRESS": "ĐỊA CHỈ",
+        "FEEDBACK": "PHẢN HỒI",
+        "PRODUCT": "SẢN PHẨM",
+        "PRODUCTS": "SẢN PHẨM",
+        "CATELOGIES": "DANH MỤC SẢN PHẨM"
+    },
+    "PRODUCTS":{
+        "MOBILE":"ĐIỆN THOẠI",
+        "TIVI":"TIVI",
+        "FOOD":"ĐỒ ĂN",
+        "HOTPRODUCT": "SẢN PHẨM NỔI BẬC"
+        
+    }
+    
+    
+}

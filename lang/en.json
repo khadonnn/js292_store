@@ -1,0 +1,22 @@
+{
+    "MENU": {
+        "STORE":"HOMETECH STORE",
+        "HOME": "HOME",
+        "ABOUT": "ABOUT",
+        "ADDRESS":"ADDRESS",
+        "CONTACT":"CONTACT",
+        "FEEDBACK":"FEEDBACK",
+        "PRODUCT": "MENU",
+        "PRODUCTS": "PRODUCTS",
+        "CATELOGIES": "CATELOGIES"
+    },
+    "PRODUCTS":{
+        "MOBILE":"MOBILE",
+        "TIVI":"TIVI",
+        "FOOD":"FOOD",
+        "HOTPRODUCT": "SPECIAL SALE"
+
+    }
+
+    
+}

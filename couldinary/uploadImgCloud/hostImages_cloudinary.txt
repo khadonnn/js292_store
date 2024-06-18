@@ -1,0 +1,24 @@
+https://cloudinary.com/documentation/upload_images
+https://cloudinary.com/documentation/image_upload_api_reference
+
+
+
+Đăng ký tài khoản: https://cloudinary.com/
+
+
+
+CLOUD_NAME= dun3tupsv
+API_KEY= 641369332728138
+API_SECRET= k9IVD19T0WwrBHuuRimDXdi887Q
+
+
+
+upload preset name: rtzr6utq
+-------------------------------------------------------------------------------
+Server
+
+npm i cloudinary --s
+
+Create file : cloudinaryImages.js
+
+const cloudinary = require("cloudinary");

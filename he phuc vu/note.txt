@@ -1,0 +1,52 @@
+b1. Tổ chức thư mục
+    he_phuc_vu
+        data
+        images
+b2. Tạo tập tin: package.json -> Lưu trữ thông tin và các module hỗ trợ cho ứng dụng nodejs
+    - Menu View/Terminal
+        - npm init --y (Lệnh tạo tập tin package.json)
+b3. Cài đặt và Gỡ Cài đặt các gói module
+        Cài đặt: npm i <module Name>[@x.x.xx] --s
+            Ví dụ cài đặt module mongodb: npm i mongodb --s
+            Ví dụ cài đặt module nodemailer: npm i nodemailer --s
+        Gỡ Cài đặt: npm uninstall <module Name>[@x.x.xx]
+            Ví dụ gỡ cài đặt module nodemailer: npm uninstall nodemailer
+        Cài đặt các module từ tập tin package.json
+            npm i
+===================================================================================
+Tạo Dịch vụ
+b1. Tạo tập tin: ./server.js
+    code...(Xem phim)
+b2. Thực thi Dịch vụ (Chọn một trong ba cách sau)
+    Cách 1: debug *****
+        F5: start debug
+        Shift+ F5: stop
+        Ctrl + shift + F5: ReStart
+    Cách 2: thực thi dịch vụ với lệnh node
+        b1. Vào menu View/Terminal
+        b2. node ./server.js
+        stop server: Ctrl + C
+    Cách 3: thực thi dịch vụ với lệnh npm start
+        b1. Mở tập tin package.js
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start": "node ./server.js"
+        },
+        b2. Vào menu View/Terminal:
+            run server: npm start -> Enter
+            stop server: Ctrl + C => Y => Enter
+====================================================================   
+Cài đặt Extensions: Test server (rest client)
+    phần mở rộng: *.http hay *.rest
+    Ghi chú: # hay //
+
+GET:
+    listTIVI
+    listMOBILE
+    listFOOD
+    listUSER
+    listSTUDENT
+    listSTORE
+    
+
+

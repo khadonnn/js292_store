@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>TechHome</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/myProject.css">
+    <!-- font roboto-quicksand -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<script src="../lang/libs.js"></script>
+<script>
+    var lang = {}
+
+    if (sessionStorage.getItem("LANG") == undefined) {
+        sessionStorage.setItem("LANG", "VI")
+    }
+    let langua = sessionStorage.getItem("LANG");
+    if (langua == "VI") {
+        lang = readFile('../lang/vi.json');
+    } else {
+        lang = readFile('../lang/en.json');
+    }
+</script>
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Tiêu đề trang -->
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col-12 col-md-10 col-xl-10"></div>
+                <div class="col-12 col-md-2 col-xl-2">
+                    <img src="../images/vi.jpg" alt="" class="image-thumbnail" style="width: 20%;" onclick="sessionStorage.setItem('LANG','VI');window.location.reload()" ></a>
+                    <img src="../images/en.jpg" alt="" class="image-thumbnail" style="width: 20%;"onclick="sessionStorage.setItem('LANG','EN');window.location.reload()" ></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 product-title pl-4 text-center" id="tagStore">
+                    
+                </div>
+                <div class="col-xl-6 thumbnail-products">
+                    <div class="row">
+                        <div class="col-xl-10 ">
+                            <div id="carouselId" class="carousel slide header-carousel" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselId" data-slide-to="1"></li>
+                                    <li data-target="#carouselId" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active">
+                                        <img src="../images/TIVI_1.png" alt="First slide" class="img-fluid rounded ">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../images/TIVI_6.png" alt="First slide" class="img-fluid rounded ">
+
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="../images/TIVI_5.png" alt="First slide" class="img-fluid rounded ">
+
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <div class="icon-fixed-mess">
+        <div class="col">
+            <span>
+                <i class="fa-brands fa-facebook-messenger" style="color: #0667b1;"></i>
+            </span>
+        </div>
+    </div>
+    <div class="circle-up">
+        <div class="col-12">
+            <a href="#"><i class="fa-solid fa-circle-chevron-up" style="color: #3d3d3d;"></i></a>
+        </div>
+    </div>
+    <!-- navbar menu-->
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top mb-0 bg-header">
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
+            <div class="container px-0 px-lg-0 d-inline-flex " >
+                <a class="navbar-brand text-white ml-lg-5" href=".">TechTV</a>
+                <ul class="navbar-nav ml-auto mt-1 mt-lg-0 ml-lg-auto font-weight-bold align-items-center">
+                    <li class="nav-item active">
+                        <a class="nav-link text-info " href="../home/"><script>_LANG(lang.MENU.HOME)</script>  <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" href="#"><script>_LANG(lang.MENU.ABOUT)</script> </a>
+                    </li>
+                 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-info dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <script>_LANG(lang.MENU.PRODUCTS)</script>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="../mobile/">Mobile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../tivi/">Tivi</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../food/">Food</a>
+                        </div>
+                    </li>
+                    <li class="nav-item  m-2 ">
+                        <div class="container bg-user-avatar">
+                            <div class="row user-info">
+                                <!-- <div class="row user-info " data-toggle="modal" data-target="#modelIdLogin"> -->
+
+                                <img src="../images/Khach_Tham_quan.png" alt="" class="rounded user-avatar ">
+                                <a class="nav-link text-white p-1 " href="../user/index.html">Nguyen Kha</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-cart border border-success p-1 rounded my-1 px-2 shopping-cart">
+                        <a href="">
+                        <i class="fa-solid fa-cart-shopping text-success"></i>
+                        <span class="quantity">0</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Sale -->
+   
+    <!-- Product -->
+    <div class="project-section bg-gradient-light ">
+        <div class="container-fluid px-lg-5 px-sm-5 px-md-5">
+            <div class="row d-flex justify-content-between">
+                
+                <div class="col-sm-3 col-md-3 col-xl-3 my-lg-3 rounded">
+                    <div class="container">
+                        <div class="container ">
+                            <h4 class="text-success text-center text-nowrap"><script>_LANG(lang.MENU.PRODUCT)</script>
+                                <hr class="my-2 mx-auto border-success">
+                            </h4>
+
+                        </div>
+                        <!-- DANH MUC SAN PHAM -->
+                        <div class="container">
+                            <div class="action-show">
+                                <div class="menuProducts d-flex justify-content-center pt-1 pb-1"><span class=""><script>_LANG(lang.MENU.CATELOGIES)</script></span></div>
+                                <ul class="list-products" id="list-products">
+                                    <li class="list-item ">
+                                        <a href="../tivi/index.html"
+                                            class="d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-tv pr-4"></i>
+                                            Tivi
+                                            
+                                        </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a href="../mobile/index.html"
+                                            class="d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-mobile-screen pr-4"></i>
+                                            Mobile
+                                            
+                                        </a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a href="../food/index.html"
+                                            class="d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-utensils pr-4"></i>
+                                            Food
+                                            
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container col-sm-6 col-xl-6 flash-sale-wrapper">
+                    <div class="row mb-2 d-flex justify-content-around text-center flash-sale-list">
+                        <div class="col-xl-3 col-md-3 col-sm-3 flash-sale-item sale-item-separate">
+                            <h4 class="flash-sale-header active"><span style=" white-space: nowrap;">Sản phẩm cùng loại🔥</span></h4>
+                        </div>
+                        
+                    </div>
+                    
+            
+                </div>
+                <!-- Products section -->
+                <div class="container-fluid">
+                    <div class="row p-5">
+                        <div class="col-12 col-md-9 col-xl-9">
+                            <h4 class="badge-success text-white p-2">Giỏ hàng của bạn</h4>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="text-center text-nowrap">
+                                            <th>Hình</th>
+                                            <th>Tên</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá Bán</th>
+                                            <th>Thành tiền</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="thGiohangMua"></tbody>
+            
+                                </table>
+                                <div class="text-right mb-2">
+                                    <button class="btn btn-sm btn-outline-dark" onclick="datHang()">Đặt hàng</button>
+                                    <button class="btn btn-sm btn-outline-dark"
+                                        onclick="sessionStorage.removeItem('carts');window.history.back()">Xóa Giỏ hàng</button>
+                                    <button class="btn btn-sm btn-outline-dark" onclick="window.history.back()">Mua tiếp</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3 col-xl-3">
+                            <h4 class="bg-success text-white p-2">Thông tin của bạn</h4>
+                            <div class="form-group">
+                                <input type="text" name="" id="Th_Ho_ten" class="form-control" placeholder="Họ tên của bạn">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="Th_Email" class="form-control" placeholder="Email của bạn">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="Th_Dien_thoai" class="form-control" placeholder="Điện thoại của bạn">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="Th_Dia_chi" class="form-control" placeholder="Địa chỉ giao hàng">
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="" id="Th_Ngay_Giao_hang" class="form-control" placeholder="Ngày giao hàng">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+        </div>
+    </div>
+    <!-- icon fixed -->
+   
+    
+    <!-- footer section -->
+    <div class="container-fluid slider-section background-contact">
+        <img src="../images/background1.jpg"
+            class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+        <div class="contact-section w-100">
+            <div class="container">
+                <div class="row px-lg-5">
+                    <div class="col-md-4 col-xl-4 col-sm-4 mb-3 mb-md-0 contact-bottom">
+                        <div class="card py-1 h-20">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-location-dot text-info"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-2 mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 col-sm-4 mb-3 mb-md-0 contact-bottom">
+                        <div class="card py-1 h-20">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-envelope text-info "></i>
+                                <h4 class="text-uppercase m-0">Contact</h4>
+                                <hr class="my-2 mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xl-4 col-sm-4 mb-3 mb-md-0 contact-bottom text-nowrap">
+                        <div class="card py-1 h-20">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-comments text-info"></i>
+                                <h4 class="text-uppercase m-0 style">feedback</h4>
+                                <hr class="my-2 mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center bg-dark text-white p-3 h5">
+                &COPY;2024 - Designer TTTH - Lớp LTV javaScript 292
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="../node_modules/idb/lib/idb.js"></script>
+    <script src="../libs/Xu_ly_IndexedDB.js"></script>
+
+    <script src="../libs/modal.js"></script>
+    <script src="../libs/api.js"></script>
+    <script src="../libs/store.js"></script>
+
+    <script src="../libs/cart.js"></script>
+    <script>
+        dbPromise = idb.open(db, 1);
+        idbObjStore.getAll("store").then((result) => {
+            store = result[0];
+            xuatCuahang(store, tagStore);
+            carts = JSON.parse(sessionStorage.getItem("carts"));
+            xuatSanphamMua(carts)
+        })
+    </script>
+</body>
+
+</html>

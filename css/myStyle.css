@@ -1,0 +1,25 @@
+
+.canhGiua{
+    text-align: center !important;
+}
+.breadcrumb{
+    margin-bottom: 0.25rem;
+    background-color: transparent;
+}
+
+.card-footer{
+    background-color: transparent;
+    border-top: none;
+}
+.jumbotron {
+    background: linear-gradient(to bottom, #000000, #333333);
+    color: aliceblue;
+}
+.border-dark {
+    /* border-color: rgb(51, 125, 198) !important; */
+    border: 1px solid rgb(51, 125, 198) !important;
+    box-shadow: 0px 0px 2px  rgb(115, 159, 203);
+}
+.activeLstMobile{
+    background-color: whitesmoke;
+}
