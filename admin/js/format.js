@@ -1,4 +1,5 @@
 function Tao_Chuoi_The_hien_So_nguyen_duong(So_nguyen) {
+    if(!So_nguyen) return 0;
     var Chuoi_The_hien = ""
     var Chuoi_So_nguyen = So_nguyen.toString()
     var So_Ky_so = Chuoi_So_nguyen.length

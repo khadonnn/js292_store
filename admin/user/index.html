@@ -10,7 +10,7 @@
 <html lang="en">
 
 <head>
-    <title>Quản trị Shop 292 - User</title>
+    <title>Quản trị Cửa hàng 292 - Mobile</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -43,8 +43,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 bg-dark text-white text-center">
-                <h1>Hệ thống Quản trị - Cập nhật User </h1>
+            <div class="col-12 bg-dark text-white text-center d-flex justify-content-start align-items-center">
+                <h2 class="col-1">TechHome </h2>
+                <h1 class="col-1"> </h1>
+                <h1 class="col-10">Hệ thống Quản trị - Cập nhật User </h1>
             </div>
 
         </div>
@@ -52,8 +54,8 @@
     <div class="container pt-2 sticky-top bg-light">
         <div class="row">
             <div class="col-6">
-                <button class="btn btn-danger float-left" onclick="insertFood()" title="Thêm User" data-toggle="modal"
-                    data-target="#modelId"><i class="fa fa-user" aria-hidden="true"></i> Thêm</button>
+                <button class="btn btn-danger float-left" onclick="insertUser()" title="Thêm Điện thoại" data-toggle="modal"
+                    data-target="#modelId"><i class="fa fa-mobile" aria-hidden="true"></i> Thêm</button>
                 <input type="text" class="ml-3 mt-1 w-50" name="" id="" placeholder="Tìm theo tên"
                     onkeyup="KeyCode(event)">
             </div>
@@ -78,8 +80,6 @@
                             <th>#</th>
                             <th>Hình</th>
                             <th>Tên</th>
-                            <th>Giá Nhập</th>
-                            <th>Giá Bán</th>
                             <th>Nhóm</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
@@ -107,7 +107,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="ModalCancel" data-dismiss="modal">Bỏ
                         qua</button>
-                    <button type="button" class="btn btn-primary" id="ModalSave" onclick="saveFood()">Lưu</button>
+                    <button type="button" class="btn btn-primary" id="ModalSave" onclick="saveUser()">Lưu</button>
                 </div>
             </div>
         </div>
@@ -126,13 +126,13 @@
         crossorigin="anonymous"></script>
     <script src="../js/api.js"></script>
     <script src="../js/format.js"></script>
-    <script src="../js/food.js"></script>
+    <script src="../js/user.js"></script>
     <script>
-        let dsFood= [];
-        apiFood().then(result => {
-            dsFood = result;
-            console.log(dsFood);
-            Xuat_Danh_sach(dsFood);
+        let dsUser = [];
+        apiUser().then(result => {
+            dsUser = result;
+            console.log(dsUser);
+            Xuat_Danh_sach(dsUser);
         })
     </script>
 </body>

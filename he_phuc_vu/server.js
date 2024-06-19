@@ -181,8 +181,91 @@ const server = http.createServer((req, res) => {
                     res.end(JSON.stringify(ket_qua));
                 })
             })
-
-        }else {
+        }else if(url=="/INSERT_TIVI"){
+            req.on("end",()=>{
+                let ket_qua = {
+                    "Noi_dung": true
+                }
+                let mobileNew = JSON.parse(noi_dung_nhan);
+                db.insertOne("tivi",mobileNew).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung = false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/imgTIVI"){
+            req.on("end",()=>{
+                let img=JSON.parse(noi_dung_nhan);
+                let ket_qua={"Noi_dung":true};
+                imgCloud.UPLOAD_CLOUDINARY(img.name,img.src).then(result=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch(err=>{
+                    console.log(err);
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/INSERT_FOOD"){
+            req.on("end",()=>{
+                let ket_qua = {
+                    "Noi_dung": true
+                }
+                let foodNew = JSON.parse(noi_dung_nhan);
+                db.insertOne("food",foodNew).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung = false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/INSERT_USER"){
+            req.on("end",()=>{
+                let ket_qua = {
+                    "Noi_dung": true
+                }
+                let mobileNew = JSON.parse(noi_dung_nhan);
+                db.insertOne("user",mobileNew).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung = false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/imgFOOD"){
+            req.on("end",()=>{
+                let img=JSON.parse(noi_dung_nhan);
+                let ket_qua={"Noi_dung":true};
+                imgCloud.UPLOAD_CLOUDINARY(img.name,img.src).then(result=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch(err=>{
+                    console.log(err);
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/imgUSER"){
+            req.on("end",()=>{
+                let img=JSON.parse(noi_dung_nhan);
+                let ket_qua={"Noi_dung":true};
+                imgCloud.UPLOAD_CLOUDINARY(img.name,img.src).then(result=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch(err=>{
+                    console.log(err);
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        } else {
             res.end(kq)
         }
 
@@ -206,7 +289,53 @@ const server = http.createServer((req, res) => {
                     res.end(JSON.stringify(ket_qua));
                 })
             })
+        } else if(url=="/UPDATE_TIVI"){
+            req.on("end",()=>{
+                let mobileUpdate=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.updateOne("tivi",mobileUpdate.condition,mobileUpdate.update).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    console.log(err)
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/UPDATE_FOOD"){
+            req.on("end",()=>{
+                let mobileUpdate=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.updateOne("food",mobileUpdate.condition,mobileUpdate.update).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    console.log(err)
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/UPDATE_USER"){
+            req.on("end",()=>{
+                let userUpdate=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.updateOne("user",userUpdate.condition,userUpdate.update).then((result)=>{
+                    console.log(result);
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    console.log(err)
+                    ket_qua.Noi_dung=false;
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
         }
+        
     } else if(method=="DELETE"){
         let noi_dung_nhan = ``;
         req.on("data", (data) => {
@@ -219,6 +348,51 @@ const server = http.createServer((req, res) => {
                     "Noi_dung":true
                 }
                 db.deleteOne("mobile",mobileDelete).then((result)=>{
+                    console.log(result)
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung=false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        } else if(url=="/DELETE_TIVI"){
+            req.on("end",()=>{
+                let mobileDelete=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.deleteOne("tivi",mobileDelete).then((result)=>{
+                    console.log(result)
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung=false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/DELETE_FOOD"){
+            req.on("end",()=>{
+                let mobileDelete=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.deleteOne("food",mobileDelete).then((result)=>{
+                    console.log(result)
+                    res.end(JSON.stringify(ket_qua));
+                }).catch((err)=>{
+                    ket_qua.Noi_dung=false;
+                    console.log(err)
+                    res.end(JSON.stringify(ket_qua));
+                })
+            })
+        }else if(url=="/DELETE_USER"){
+            req.on("end",()=>{
+                let mobileDelete=JSON.parse(noi_dung_nhan);
+                let ket_qua={
+                    "Noi_dung":true
+                }
+                db.deleteOne("user",mobileDelete).then((result)=>{
                     console.log(result)
                     res.end(JSON.stringify(ket_qua));
                 }).catch((err)=>{

@@ -70,7 +70,7 @@
                     <h5 class="text-white">Food</h5>
                 </div>
             </div>
-            <div class="col-3 p-2">
+            <div class="col-3 p-2" onclick="window.location='./user'">
                 <div class="btn btn-success">
                     <img src="images/user.png" alt="" class="img-fluid img-thumbnail">
                     <h5 class="text-white">User</h5>
@@ -91,6 +91,9 @@
             </div>
             <div class="col-12 col-md-4 col-xl-4">
                 <div id="Th_Bieu_do_Food" class="card"></div>
+            </div>
+            <div class="col-12 col-md-4 col-xl-4 mt-3">
+                <div id="Th_Bieu_do_User" class="card"></div>
             </div>
         </div>
     </div>
@@ -116,7 +119,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-
+<!-- chart -->
 
     <script src="./code/highcharts.js"></script>
     <script src="./code/modules/accessibility.js"></script>
@@ -162,6 +165,18 @@
             })
             cuaHang.Ten = `Shop 292`;
             taoBaocaoFood();
+        })
+        apiUser().then(result => {
+            dsUser = result;
+            taoHangSXUser();
+            dsHangSXUser.forEach(x => {
+                chuDeUser.push(x.Ten);
+                let tongSoSanpham = dsUser.filter(tv => tv.Nhom_Nguoi_dung.Ma_so == x.Ma_so).length;
+                dataUser[0].data.push(tongSoSanpham)
+
+            })
+            cuaHang.Ten = `Shop 292`;
+            taoBaocaoUser();
         })
     </script>
     

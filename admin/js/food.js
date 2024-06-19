@@ -1,6 +1,6 @@
 var capNhat = true;
 const Xuat_Danh_sach = (ds) => {
-    
+    console.log(ds);
     let html = ``;
     ds.sort((a, b) => a.Ten.localeCompare(b.Ten))
     ds.forEach((item, index) => {
@@ -11,7 +11,7 @@ const Xuat_Danh_sach = (ds) => {
                 <img src='${Dia_chi_Img}/${item.Ma_so}.png' class="" />
             </td>
             <td>${item.Ten}</td>
-            <td class="text-right" >${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban-2000)}<sup>đ</sup></td>
+            <td class="text-right" >${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban)}<sup>đ</sup></td>
             <td class="text-right">${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban)}<sup>đ</sup></td>
             <td class="text-center">${item.Nhom.Ma_so}</td>
             <td>
@@ -47,7 +47,7 @@ const insertFood = () => {
 // Update Food
 const updateFood = (key) => {
     capNhat = false;
-    let item = dsMobile.find(x => x.Ma_so == key);
+    let item = dsFood.find(x => x.Ma_so == key);
     showModal(item);
 
 }
@@ -57,7 +57,7 @@ const deleteFood = (key) => {
         let condition={
             "Ma_so":key
         }
-        apiDienthoaiDelete(condition).then(result=>{
+        apiFoodDelete(condition).then(result=>{
             alert('Xóa thành công');
             window.location.reload();
         })
@@ -77,7 +77,8 @@ const showModal = (item = null) => {
     let html = ``
     html += `
     <div class="form-group">
-        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: hidden;"
+        <label for="Th_Ma_so">Mã Số</label>
+        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: ;"
             value="${item ? item.Ma_so : ''}">
     </div>
     <div class="form-group">
@@ -88,7 +89,7 @@ const showModal = (item = null) => {
     <div class="form-group">
         <label for="Th_Don_gia_Nhap">Đơn giá Nhập</label>
         <input type="number" class="form-control" id="Th_Don_gia_Nhap" 
-            placeholder="Đơn giá Nhập" value="${item ? item.Don_gia_Nhap : ''}">
+            placeholder="Đơn giá Nhập" value="${item ? (item.Don_gia_Ban) : ''}">
     </div>
     <div class="form-group">
         <label for="Th_Don_gia_Ban">Đơn giá Bán</label>
@@ -98,8 +99,8 @@ const showModal = (item = null) => {
     <div class="form-group">
         <label for="Th_Nhom_Dien_thoai">Nhóm Điện thoại</label>
         <select id="Th_Nhom_Dien_thoai">
-            <option value="ANDROID" ${Nhom == 'ANDROID' ? 'selected' : ''} >ANDROID</option>
-            <option value="IPHONE" ${Nhom == 'IPHONE' ? 'selected' : ''}>IPHONE</option>
+            <option value="CA_PHE" ${Nhom == 'CA_PHE' ? 'selected' : ''} >CA_PHE</option>
+            <option value="MON_AN" ${Nhom == 'MON_AN' ? 'selected' : ''}>MON_AN</option>
         </select>
     </div>
     <div class="form-group">
@@ -130,7 +131,7 @@ const previewImg = () => {
 // Get key end, create key new
 const autoKey = () => {
     let keyNhom = Th_Nhom_Dien_thoai.value;
-    let arrNhom = dsMobile.filter(x => x.Nhom.Ma_so == keyNhom)
+    let arrNhom = dsFood.filter(x => x.Nhom.Ma_so == keyNhom)
     arrNhom.sort((a, b) => { return Number(a.Ma_so.trim().split("_")[1]) - Number(b.Ma_so.trim().split("_")[1]) })
     let keyEnd = arrNhom[arrNhom.length - 1];
     let num = Number(keyEnd.Ma_so.split("_")[1]) + 1;
@@ -139,7 +140,7 @@ const autoKey = () => {
 }
 
 // Save 
-const saveMobile = () => {
+const saveFood = () => {
 
     let Ma_so = (document.querySelector("#Th_Ma_so").value != "") ? document.querySelector("#Th_Ma_so").value : autoKey();
     // console.log(Ma_so);
@@ -152,7 +153,7 @@ const saveMobile = () => {
 
     if (capNhat) {
         // Insert
-        let mobileNew = {
+        let foodNew = {
             "Ten": Ten,
             "Ma_so": Ma_so,
             "Don_gia_Ban": Don_gia_Ban,
@@ -169,12 +170,12 @@ const saveMobile = () => {
         // console.log(mobileNew)
         // return false;
         // Call API
-        apiDienthoaiInsert(mobileNew).then(result=>{
+        apiFoodInsert(foodNew).then(result=>{
             console.log(result);
             saveImg(Ma_so);
-            apiDienthoai().then(result => {
-                dsMobile = result.noiDung;
-                Xuat_Danh_sach(dsMobile);
+            apiFood().then(result => {
+                dsFood = result;
+                Xuat_Danh_sach(dsFood);
                 document.querySelector("#ModalCancel").click();
             })
         })
@@ -182,7 +183,7 @@ const saveMobile = () => {
 
     } else {
         // Update
-        let mobileUpdate = {
+        let foodUpdate = {
             condition: {
                 "Ma_so": Ma_so
             },
@@ -201,12 +202,12 @@ const saveMobile = () => {
         }
         // console.log(mobileUpdate)
         // Call API
-        apiDienthoaiUpdate(mobileUpdate).then(result=>{
+        apiFoodUpdate(foodUpdate).then(result=>{
             //console.log(result);
             saveImg(Ma_so);
-            apiDienthoai().then(result => {
-                dsMobile = result.noiDung;
-                Xuat_Danh_sach(dsMobile);
+            apiFood().then(result => {
+                dsFood = result;
+                Xuat_Danh_sach(dsFood);
                 document.querySelector("#ModalCancel").click();
             })
             //window.location.reload();
@@ -230,7 +231,7 @@ const saveImg=(Ma_so)=>{
             Chuoi_nhi_phan = e.target.result;
             let img = { "name": Ten_Hinh, "src": Chuoi_nhi_phan }
             //console.log(img)
-            apiImageDienthoai(img).then(result=>{
+            apiImageFood(img).then(result=>{
                 //console.log(result)
                 //reader.clear()    
             })

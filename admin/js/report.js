@@ -43,7 +43,7 @@ const taoBaocaoTivi=()=>{
     
     Highcharts.chart('Th_Bieu_do_Tivi', {
         chart: {
-            type: 'column' // column, bar, line
+            type: 'line' // column, bar, line
         },
         title: {
             text: cuaHang.Ten
@@ -200,7 +200,7 @@ const taoBaocaoFood=()=>{
     
     Highcharts.chart('Th_Bieu_do_Food', {
         chart: {
-            type: 'column' // column, bar, line
+            type: 'bar' // column, bar, line
         },
         title: {
             text: cuaHang.Ten
@@ -234,5 +234,82 @@ const taoBaocaoFood=()=>{
         },
     
         series: dataFood
+    });
+}
+// user
+let dsHangSXUser = [];
+let chuDeUser = [];
+let dsUser = [];
+let dataUser = [{
+    name: 'Số lượng',
+    data: [],
+    //color: randomColor()
+}]
+
+// Report
+
+const taoHangSXUser = () => {
+    dsHangSXUser = Array.from(new Set(dsUser.map(x => x.Nhom_Nguoi_dung.Ma_so))).map(Ma_so => {
+        nhom = {
+            Ma_so: Ma_so,
+            Ten: dsUser.find(x => x.Nhom_Nguoi_dung.Ma_so == Ma_so).Nhom_Nguoi_dung.Ten.toUpperCase()
+        }
+        return nhom
+    })
+}
+
+const taoBaocaoUser=()=>{
+    Highcharts.setOptions({
+        lang: {
+            numericSymbols: [` Ngàn`, ` Triệu`],
+            numericSymbolMagnitude: 1000,
+            decimalPoint: ',',  ///phân cách thập phân
+            thousandsSep: '.' ///hàng ngàn
+        },
+        chart: {
+            style: {
+                fontFamily: `tahoma`, /// chỉnh font cho chữ thống dc đúng
+                fontSize: 16
+            }
+        }
+    })
+    
+    
+    Highcharts.chart('Th_Bieu_do_User', {
+        chart: {
+            type: 'column' // column, bar, line
+        },
+        title: {
+            text: cuaHang.Ten
+        },
+        subtitle: {
+            text: ' Thống kê Nhân viên'
+        },
+        xAxis: {
+            categories: chuDeUser
+        },
+        yAxis: {
+            title: {
+                text: 'Số Nhân viên'
+            }
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    y:30,
+                    align: 'center',
+                    color:'white'
+                }
+            },
+            column: {
+                colorByPoint: true
+            }
+        },
+        caption: {
+            text: `Thống kê Số lượng Nhân viên `
+        },
+    
+        series: dataUser
     });
 }

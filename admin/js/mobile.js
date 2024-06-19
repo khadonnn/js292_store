@@ -77,6 +77,7 @@ const showModal = (item = null) => {
     let html = ``
     html += `
     <div class="form-group">
+        <label for="Th_Ma_so">Mã số</label>
         <input type="text" class="form-control" id="Th_Ma_so" style="visibility: visible;"
             value="${item ? item.Ma_so : ''}">
     </div>
