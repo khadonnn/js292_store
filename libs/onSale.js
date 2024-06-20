@@ -6,7 +6,7 @@ const OnSaleTivi=(src=[],tagSaleTivi)=>{
     let html=``
     src.slice(0, 4).forEach((item)=>{
         html +=`
-        <div class="col-xl-3 col-sm-3 col-md-3" >
+        <div class="col-xl-3 col-sm-6 col-md-6" >
             <div class="image-container">
                 <div class="card border-dark card-product card-product">
                     <i class="fa-solid fa-heart"></i>
@@ -32,3 +32,29 @@ const OnSaleTivi=(src=[],tagSaleTivi)=>{
     })
     tagSaleTivi.innerHTML=html;
 }
+// offer end in
+const day=document.querySelector('.day')
+const hour=document.querySelector('.hour')
+const minute=document.querySelector('.minute')
+const second=document.querySelector('.second')
+// tarGetTime.setDate(tarGetTime.getDate())
+
+function upDateTime(){
+    const tarGetTime=new Date("Jun 25, 2024 23:59:59").getTime();
+    const currentTime=new Date().getTime();
+    const timeDifference=tarGetTime - currentTime;
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    // const hours=Math.floor(timeDifference/(1000*60*60*24));
+    var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes=Math.floor((timeDifference%(1000*60*60))/(1000*60));
+    const seconds=Math.floor((timeDifference%(1000*60))/1000)
+    
+    day.textContent=days.toString().padStart(2,"0");
+    hour.textContent=hours.toString().padStart(2,"0");
+    minute.textContent=minutes.toString().padStart(2,"0");
+    second.textContent=seconds.toString().padStart(2,"0")
+    
+}
+upDateTime()
+setInterval(upDateTime,1000);

@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
 }
+
 i{
     font-size: 1.2rem;
 }
@@ -308,7 +309,32 @@ body {
 .form-check{
     padding-top: 5px;
 }
-/*  */
+/*flash */
+.boxes{
+    position: relative;
+}
+.offer-end-in {
+    width: 100%;
+    top: 28px;
+    position: relative;
+}
+.day,.hour,.minute,.second{
+    background-color: brown;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    font-weight: 600;
+}
+.day-text,.hour-text,.minute-text,.second-text{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
 .flash-sale-list .flash-sale-header{
     background-color: white;
     color:black ; 
