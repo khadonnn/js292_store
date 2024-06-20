@@ -129,13 +129,13 @@
                 <a class="navbar-brand text-white ml-lg-5" href=".">TechTV</a>
                 <ul class="navbar-nav ml-auto mt-1 mt-lg-0 ml-lg-auto font-weight-bold align-items-center">
                     <li class="nav-item active">
-                        <a class="nav-link text-info " href="../home/"><script>_LANG(lang.MENU.HOME)</script>  <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-info " href="."><script>_LANG(lang.MENU.HOME)</script>  <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-info" href="#"><script>_LANG(lang.MENU.ABOUT)</script> </a>
+                        <a class="nav-link text-info" href="../about/"><script>_LANG(lang.MENU.ABOUT)</script> </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-info dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-info dropdown-toggle" href="../home/" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <script>_LANG(lang.MENU.PRODUCTS)</script>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -152,15 +152,15 @@
                             <div class="row user-info">
                                 <!-- <div class="row user-info " data-toggle="modal" data-target="#modelIdLogin"> -->
 
-                                <img src="../images/Khach_Tham_quan.png" alt="" class="rounded user-avatar ">
-                                <a class="nav-link text-white p-1 " href="../user/index.html">Nguyen Kha</a>
+                                <img src="../images/Khach_Tham_quan.png" alt="" class="rounded user-avatar " href="../user/">
+                                <a class="nav-link text-white p-1 " href="../user/">Nguyen Kha</a>
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item nav-cart border border-success p-1 rounded my-1 px-2 shopping-cart">
+                    <li class="nav-item nav-cart border border-success p-1 rounded my-1 px-2 shopping-cart" onclick="openCart()">
                         <a href="../cart/">
                         <i class="fa-solid fa-cart-shopping text-success"></i>
-                        <span class="quantity">0</span>
+                        <span class="quantity" id="Th_Gio_hang">0</span>
                         </a>
                     </li>
 
@@ -171,43 +171,71 @@
         </div>
     </nav>
    
-     <!-- Card -->
-     <div class="container-fluid">
-        <div class="row p-5">
-            <div class="col-12 col-md-5 col-xl-5">
-                <h4 class="bg-success text-white p-2">Liên hệ với chúng tôi</h4>
-                <div class="form-group">
-                    <input type="text" name="" id="Th_Ho_ten" class="form-control" placeholder="Họ tên của bạn">
-                    <label for="" class="error" id="lblHo_ten">(*)</label>
+    <!-- Product -->
+    <div class="container">
+        <section class="row">
+            <div class="wrapper text-light">
+                <h2 class="main_title">ABOUT US</h2>
+                <div class="content">
+                    <div class="image">
+                        <img src="../images/4.jpg" alt="">
+                    </div>
+                    <div class="text_box">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quos perspiciatis vero quis
+                            exercitationem nulla?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In rerum cupiditate commodi magnam
+                            temporibus laboriosam aut voluptate explicabo odit minus.
+                        </p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="text" name="" id="Th_Email" class="form-control" placeholder="Email của bạn">
-                    <label for="" class="error" id="lblEmail"></label>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="" id="Th_Dien_thoai" class="form-control" placeholder="Điện thoại của bạn">
-                    <label for="" class="error" id="lblDien_thoai"></label>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="" id="Th_Tieu_de" class="form-control" placeholder="Tiêu đề">
-                    <label for="" class="error" id="lblTieu_de"></label>
-                </div>
-                <textarea name="" id="thNoidung"></textarea>
-                <label for="" class="error" id="lblNoidung"></label>
-                <div class="text-right pt-2">
-                    <button class="btn btn-sm btn-outline-primary" id="btnLamlai">Làm Lại</button>
-                    <button class="btn btn-sm btn-outline-danger" id="btnGoi">Gửi</button>
+                <div class="media_icons ">
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="col-12 col-md-7 col-xl-7">
-                <h4 class="badge-success text-white p-2">Bản đồ đường đi đến công ty</h4>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4661.254970755394!2d106.67952014855202!3d10.762772866598837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1c06f4e1dd%3A0x43900f1d4539a3d!2sUniversity%20of%20Science%20-%20VNUHCM!5e0!3m2!1sen!2s!4v1716691088323!5m2!1sen!2s"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <script>
+            ScrollReveal({
+                reset: true,
+                distance: '50px',
+                duration: 2000,
+                delay: 200,
+            });
+            ScrollReveal().reveal('.main_title', { delay: 200, origin: 'bottom', interval: 200 });
+        </script>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 image-wrapper">
+                <div class="img-item">
+                    <img src="../images/contact-phone-1.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="text-wrapper">
+                    <div class="icon-wrap">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h1>Lorem ipsum dolor sit,  consequuntur sequi laborum consequatur.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem placeat unde sapiente?
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. A fuga magnam quod. 
+                    </p>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <a href="../home/" class=" btn bg-info btn-showMore ">
+                        Xem thêm sản phẩm 🔥  
+                    </a>
+                   </div>
+                
             </div>
         </div>
     </div>
+    <!-- icon -->
+   
+    
     <!-- footer section -->
     <div class="container-fluid slider-section background-contact">
         <img src="../images/background1.jpg"
@@ -219,7 +247,8 @@
                         <div class="card py-1 h-20">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-location-dot text-info"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
+                                <h4 class="text-uppercase m-0 counter"data-target="10000">0</h4>
+                                <h4 class="text-uppercase m-0">USERS</h4>
                                 <hr class="my-2 mx-auto">
                             </div>
                         </div>
@@ -228,7 +257,8 @@
                         <div class="card py-1 h-20">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-envelope text-info "></i>
-                                <h4 class="text-uppercase m-0">Contact</h4>
+                                <h4 class="text-uppercase m-0 counter"data-target="1000">0</h4>
+                                <h4 class="text-uppercase m-0">CONTACTS</h4>
                                 <hr class="my-2 mx-auto">
                             </div>
                         </div>
@@ -237,7 +267,8 @@
                         <div class="card py-1 h-20">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-comments text-info"></i>
-                                <h4 class="text-uppercase m-0 style">feedback</h4>
+                                <h4 class="text-uppercase m-0 counter style"data-target="2000">0</h4>
+                                <h4 class="text-uppercase m-0">FEEDBACK</h4>
                                 <hr class="my-2 mx-auto">
                             </div>
                         </div>
@@ -246,7 +277,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center bg-dark text-white p-3 h5">
@@ -256,7 +287,6 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -267,16 +297,18 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    
+        <!-- Libs JavaScript -->
         <script src="../node_modules/idb/lib/idb.js"></script>
         <script src="../libs/Xu_ly_IndexedDB.js"></script>
     
-        <!-- <script src="../libs/modal.js"></script> -->
-        <script src="../ckeditor/ckeditor.js"></script>
         <script src="../libs/api.js"></script>
         <script src="../libs/store.js"></script>
-        <script src="../libs/cart.js"></script>
-        <script src="../libs/contact.js"></script>
-    
+        <script src="../js/myProject.js"></script>
+        <script src="../libs/home.js"></script>
+
+
+ 
 </body>
 
 </html>
