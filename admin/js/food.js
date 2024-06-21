@@ -134,7 +134,7 @@ const autoKey = () => {
     let arrNhom = dsFood.filter(x => x.Nhom.Ma_so == keyNhom)
     arrNhom.sort((a, b) => { return Number(a.Ma_so.trim().split("_")[1]) - Number(b.Ma_so.trim().split("_")[1]) })
     let keyEnd = arrNhom[arrNhom.length - 1];
-    let num = Number(keyEnd.Ma_so.split("_")[1]) + 1;
+    let num = Number(keyEnd.Ma_so.split("_")[2]) + 1;
     keyNhom = keyNhom.concat("_", num.toString());
     return keyNhom;
 }
@@ -150,7 +150,6 @@ const saveFood = () => {
     let Don_gia_Nhap = Number(document.querySelector("#Th_Don_gia_Nhap").value);
     let Don_gia_Ban = Number(document.querySelector("#Th_Don_gia_Ban").value);
     let Nhom_Dien_thoai = document.querySelector("#Th_Nhom_Dien_thoai").value;
-
     if (capNhat) {
         // Insert
         let foodNew = {
@@ -167,7 +166,7 @@ const saveFood = () => {
             "Danh_sach_Phieu_Nhap": []
         }
         
-        // console.log(mobileNew)
+        // console.log(foodNew)
         // return false;
         // Call API
         apiFoodInsert(foodNew).then(result=>{

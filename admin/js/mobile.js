@@ -193,7 +193,6 @@ apiDienthoaiInsert(mobileNew).then(result=>{
             update: {
                 $set: {
                     "Ten": Ten,
-                    "Ma_so": Ma_so,
                     "Don_gia_Ban": Don_gia_Ban,
                     "Don_gia_Nhap": Don_gia_Nhap,
                     "Nhom": {
