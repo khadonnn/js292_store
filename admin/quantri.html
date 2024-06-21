@@ -52,27 +52,27 @@
     </div>
     <div class="container">
         <div class="row pt-lg-5 text-center">
-            <div class="col-3 p-2" onclick="window.location='admin/mobile/'">
+            <div class="col-3 p-2" onclick="window.location='/admin/mobile/'">
                 <div class="btn btn-danger">
-                    <img src="admin/images/mobile.png" alt="" class="img-fluid img-thumbnail">
+                    <img src="/admin/images/mobile.png" alt="" class="img-fluid img-thumbnail">
                     <h5 class="text-white">Mobile</h5>
                 </div>
             </div>
-            <div class="col-3 p-2" onclick="window.location='admin/tivi/'">
+            <div class="col-3 p-2" onclick="window.location='/admin/tivi/'">
                 <div class="btn btn-warning">
-                    <img src="admin/images/tivi.png" alt="" class="img-fluid img-thumbnail">
+                    <img src="/admin/images/tivi.png" alt="" class="img-fluid img-thumbnail">
                     <h5 class="text-white">Tivi</h5>
                 </div>
             </div>
-            <div class="col-3 p-2" onclick="window.location='admin/food/'">
+            <div class="col-3 p-2" onclick="window.location='/admin/food/'">
                 <div class="btn btn-primary">
-                    <img src="admin/images/food.png" alt="" class="img-fluid img-thumbnail">
+                    <img src="/admin/images/food.png" alt="" class="img-fluid img-thumbnail">
                     <h5 class="text-white">Food</h5>
                 </div>
             </div>
-            <div class="col-3 p-2" onclick="window.location='admin/user'">
+            <div class="col-3 p-2" onclick="window.location='/admin/user'">
                 <div class="btn btn-success">
-                    <img src="admin/images/user.png" alt="" class="img-fluid img-thumbnail">
+                    <img src="/admin/images/user.png" alt="" class="img-fluid img-thumbnail">
                     <h5 class="text-white">User</h5>
                 </div>
             </div>
@@ -121,13 +121,13 @@
 
 <!-- chart -->
 
-    <script src="./code/highcharts.js"></script>
-    <script src="./code/modules/accessibility.js"></script>
-    <script src="./code/modules/exporting.js"></script>
-    <script src="./js/api.js"></script>
-    <script src="./js/tivi.js"></script>
+    <script src="/admin/code/highcharts.js"></script>
+    <script src="/admin/code/modules/accessibility.js"></script>
+    <script src="/admin/code/modules/exporting.js"></script>
+    <script src="/admin/js/api.js"></script>
+    <script src="/admin/js/tivi.js"></script>
 
-    <script src="./js/report.js"></script>
+    <script src="/admin/js/report.js"></script>
     <script>
         apiTivi().then(result => {
             dsTivi = result;
