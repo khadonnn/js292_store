@@ -68,7 +68,7 @@ const xuatFood = (src = [], tag) => {
     let html = ``;
     src.forEach((item) => {
         html += `
-    <div class="col-sm-3 col-md-3 col-xl-3 mb-2 card-transform">
+    <div class="col-sm-12 col-md-6 col-xl-3 mb-2 card-transform">
         <div class="card border-dark card-product card-item" >
             <i class="fa-solid fa-heart"></i>
             <img class="card-img-top " src="${urlImages}/${item.Ma_so}.png" alt=""onclick="showModal(this)">
