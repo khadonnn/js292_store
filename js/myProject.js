@@ -6,11 +6,11 @@ ScrollReveal({
     durtation: 2000,
     easing:'ease'
 });
-ScrollReveal().reveal('.contact-bottom', { origin: 'bottom', interval: 300});
+ScrollReveal().reveal('.contact-bottom, .main_title', { origin: 'bottom', interval: 300});
 ScrollReveal().reveal(' .list-products', { origin: 'top', interval: 300, reset:true });
 ScrollReveal().reveal('.product-title', { origin: 'left',reset:false });
 ScrollReveal().reveal('.thumbnail-products', { origin: 'right'});
-
+  
 // flash-sale
 const listProducts =document.querySelectorAll(".flash-sale-list .flash-sale-header");
 listProducts.forEach((li)=>{
