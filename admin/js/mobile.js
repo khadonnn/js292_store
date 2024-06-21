@@ -78,7 +78,7 @@ const showModal = (item = null) => {
     html += `
     <div class="form-group">
         <label for="Th_Ma_so">Mã số</label>
-        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: visible;"
+        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: visible;" readonly
             value="${item ? item.Ma_so : ''}">
     </div>
     <div class="form-group">
@@ -193,6 +193,7 @@ apiDienthoaiInsert(mobileNew).then(result=>{
             update: {
                 $set: {
                     "Ten": Ten,
+                    "Ma_so": Ma_so,
                     "Don_gia_Ban": Don_gia_Ban,
                     "Don_gia_Nhap": Don_gia_Nhap,
                     "Nhom": {

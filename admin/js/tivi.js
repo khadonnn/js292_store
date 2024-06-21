@@ -77,7 +77,7 @@ const showModal = (item = null) => {
     let html = ``
     html += `
     <div class="form-group">
-        <label for="Th_Ma_so">Mã số</label>
+       <label for="Th_Ma_so">Mã số</label>
         <input type="text" class="form-control" id="Th_Ma_so" style="visibility: visible;"
             value="${item ? item.Ma_so : ''}">
     </div>
@@ -151,7 +151,6 @@ const saveTivi = () => {
     let Don_gia_Nhap = Number(document.querySelector("#Th_Don_gia_Nhap").value);
     let Don_gia_Ban = Number(document.querySelector("#Th_Don_gia_Ban").value);
     let Nhom_Tivi = document.querySelector("#Th_Nhom_Tivi").value;
-
     if (capNhat) {
         // Insert
         let tiviNew = {
@@ -192,6 +191,7 @@ const saveTivi = () => {
             update: {
                 $set: {
                     "Ten": Ten,
+                    "Ma_so": Ma_so,
                     "Don_gia_Ban": Don_gia_Ban,
                     "Don_gia_Nhap": Don_gia_Nhap,
                     "Nhom": {

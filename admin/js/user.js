@@ -76,7 +76,7 @@ const showModal = (item = null) => {
     html += `
     <div class="form-group">
         <label for="Th_Ma_so">Mã Số</label>
-        <input type="text" class="form-control" id="Th_Ma_so" placeholder="Mã số Nhân viên" style="visibility: visible;"
+        <input type="text" class="form-control" id="Th_Ma_so" readonly placeholder="Mã số Nhân viên" style="visibility: visible;"
             value="${item ? item.Ma_so : ''}">
     </div>
     <div class="form-group">

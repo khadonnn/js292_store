@@ -11,7 +11,7 @@ const Xuat_Danh_sach = (ds) => {
                 <img src='${Dia_chi_Img}/${item.Ma_so}.png' class="" />
             </td>
             <td>${item.Ten}</td>
-            <td class="text-right" >${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban)}<sup>đ</sup></td>
+            <td class="text-right" >${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban-2000)}<sup>đ</sup></td>
             <td class="text-right">${Tao_Chuoi_The_hien_So_nguyen_duong(item.Don_gia_Ban)}<sup>đ</sup></td>
             <td class="text-center">${item.Nhom.Ma_so}</td>
             <td>
@@ -78,7 +78,7 @@ const showModal = (item = null) => {
     html += `
     <div class="form-group">
         <label for="Th_Ma_so">Mã Số</label>
-        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: ;"
+        <input type="text" class="form-control" id="Th_Ma_so" style="visibility: ;"readonly
             value="${item ? item.Ma_so : ''}">
     </div>
     <div class="form-group">
