@@ -1,4 +1,4 @@
-const urlService = `http://localhost:8080`;
+const urlService = `https://js292-store.onrender.com`;
 const urlImages = `https://res.cloudinary.com/dun3tupsv/image/upload/v1/images`;
 
 const getAPI=(apiName)=> {
