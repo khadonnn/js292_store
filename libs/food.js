@@ -164,14 +164,15 @@ idbObjStore.getAll("store").then((result)=>{
     store=result[0];
     xuatCuahang(store,tagStore);
     idbObjStore.getAll("food").then((result)=>{
+        console.log(result)
         foods=result;
         dsTmp=result;
         lst.food=result;
-        updateSlider(dsTmp);
         taoNhomFood();
         xuatNhomFood(dsNhom,tagLstNhom);
         xuatQuangcao(dsTmp,tagCarousel);
         xuatFood(foods,tagFood);
+        updateSlider(dsTmp);
         ScrollReveal().reveal('.card-transform')
     })
     
